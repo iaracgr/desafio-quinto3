@@ -8,16 +8,17 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IProfessorRepository extends JpaRepository <ProfessorEntity,String >{
+public interface IProfessorRepository extends JpaRepository<ProfessorEntity, String> {
 
-    ProfessorEntity findByProfessorIdAndSoftDeleteFalse (String id);
+    ProfessorEntity findByProfessorIdAndSoftDeleteFalse(String id);
 
-    ProfessorEntity findByName (String name);
+    ProfessorEntity findByName(String name);
 
-    ProfessorEntity findByEmailAndSoftDeleteFalse (String email);
+    ProfessorEntity findByEmailAndSoftDeleteFalse(String email);
 
-    ProfessorEntity findByEmail (String email);
+    ProfessorEntity findByEmail(String email);
 
+    ProfessorEntity findByProfessorId(String id);
 
     List<ProfessorEntity> findAll();
 }

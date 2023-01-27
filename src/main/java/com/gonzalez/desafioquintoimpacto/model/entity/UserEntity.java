@@ -30,7 +30,7 @@ public class UserEntity { // is for Admin creation
     protected List<RoleEntity> roles;
 
     @Column(name = "soft_delete",nullable = false)
-    private boolean softDelete=false;
+    private Boolean softDelete=false;
 
 
     public boolean isEnabled() { return !softDelete; }
