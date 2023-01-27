@@ -14,7 +14,7 @@ public interface ICourseService {
 
     List<CourseDto> getCourses() throws EntityNotFoundException;
 
-    CourseEntity getByNameAndSoftDeleteFalse(String name) throws EntityNotFoundException;
+    CourseDto getByNameAndSoftDeleteFalse(String name) throws EntityNotFoundException;
 
     CourseEntity getByIdAndSoftDeleteFalse(String id) throws EntityNotFoundException;
 

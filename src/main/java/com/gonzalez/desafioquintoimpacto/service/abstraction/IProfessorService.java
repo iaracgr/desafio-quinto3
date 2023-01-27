@@ -2,6 +2,7 @@ package com.gonzalez.desafioquintoimpacto.service.abstraction;
 
 import com.gonzalez.desafioquintoimpacto.dto.ProfessorDto;
 import com.gonzalez.desafioquintoimpacto.dto.UserDto;
+import com.gonzalez.desafioquintoimpacto.model.entity.ProfessorEntity;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public interface IProfessorService {
 
     ProfessorDto getById (String id);
 
-    List<ProfessorDto> getAll();
+    List<ProfessorEntity> getAll();
 
     ProfessorDto addProfessorToCourse(String idProfessor, String idCourse) throws Exception;
 
