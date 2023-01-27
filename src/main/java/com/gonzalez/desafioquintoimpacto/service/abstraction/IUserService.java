@@ -3,8 +3,6 @@ package com.gonzalez.desafioquintoimpacto.service.abstraction;
 
 import com.gonzalez.desafioquintoimpacto.dto.UserDto;
 import com.gonzalez.desafioquintoimpacto.model.entity.UserEntity;
-import org.apache.catalina.UserDatabase;
-
 import java.util.List;
 
 public interface IUserService {

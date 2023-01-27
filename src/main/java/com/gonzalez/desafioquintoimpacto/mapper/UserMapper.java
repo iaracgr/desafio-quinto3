@@ -1,6 +1,9 @@
 package com.gonzalez.desafioquintoimpacto.mapper;
 
+import com.gonzalez.desafioquintoimpacto.dto.ProfessorDto;
 import com.gonzalez.desafioquintoimpacto.dto.UserDto;
+import com.gonzalez.desafioquintoimpacto.model.entity.CourseEntity;
+import com.gonzalez.desafioquintoimpacto.model.entity.ProfessorEntity;
 import com.gonzalez.desafioquintoimpacto.model.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class Mapper {
+public class UserMapper {
 
     public UserDto map(UserEntity user){
         UserDto userResponse = new UserDto();

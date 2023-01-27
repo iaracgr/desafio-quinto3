@@ -30,6 +30,12 @@ public class CourseDto {
 
     private List<ProfessorEntity> professorList;
 
+    private List<String> professorsNames;
+
+    private  List<String> studentsNames;
+
+    private Boolean softDelete;
+
 
 
 }

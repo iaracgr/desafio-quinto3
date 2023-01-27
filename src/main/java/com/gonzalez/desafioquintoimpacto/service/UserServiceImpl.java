@@ -2,7 +2,7 @@ package com.gonzalez.desafioquintoimpacto.service;
 
 import com.gonzalez.desafioquintoimpacto.config.RoleType;
 import com.gonzalez.desafioquintoimpacto.dto.UserDto;
-import com.gonzalez.desafioquintoimpacto.mapper.Mapper;
+import com.gonzalez.desafioquintoimpacto.mapper.UserMapper;
 import com.gonzalez.desafioquintoimpacto.model.entity.UserEntity;
 import com.gonzalez.desafioquintoimpacto.repository.IRoleRepository;
 import com.gonzalez.desafioquintoimpacto.repository.IUserRepository;
@@ -25,7 +25,7 @@ public class UserServiceImpl implements IUserService {
     private IRoleRepository iRoleRepository;
 
     @Autowired
-    private Mapper mapper;
+    private UserMapper userMapper;
 
     @Override
     @Transactional
@@ -55,7 +55,7 @@ public class UserServiceImpl implements IUserService {
             if (email != null) {
                 newUser.setEmail(email);
             }
-            UserDto userDto = mapper.map(userRepository.save(newUser));
+            UserDto userDto = userMapper.map(userRepository.save(newUser));
             return userDto;
         } else {
             throw new Exception("User not found");
@@ -68,7 +68,7 @@ public class UserServiceImpl implements IUserService {
         if (user == null) {
             throw new EntityNotFoundException("User not found");
         }
-        return mapper.map(user);
+        return userMapper.map(user);
     }
 
     @Override
@@ -77,12 +77,12 @@ public class UserServiceImpl implements IUserService {
         if (user == null) {
             throw new EntityNotFoundException("User not found");
         }
-        return mapper.map(user);
+        return userMapper.map(user);
     }
 
 
     private List<UserDto> buildListResponse(List<UserEntity> users) {
-        List<UserDto> dto = mapper.map(users);
+        List<UserDto> dto = userMapper.map(users);
         return dto;
     }
 
