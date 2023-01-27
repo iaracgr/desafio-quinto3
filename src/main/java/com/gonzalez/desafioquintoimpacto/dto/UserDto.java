@@ -15,6 +15,8 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 public class UserDto {
 
+    private String id;
+
     @NotBlank(message = "First name cannot be empty or null.")
     private String name;
 
