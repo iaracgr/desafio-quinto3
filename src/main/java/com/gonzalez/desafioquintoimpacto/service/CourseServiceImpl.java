@@ -24,12 +24,16 @@ public class CourseServiceImpl implements ICourseService {
 
     @Override
     @Transactional
-    public void createCourse(CourseDto dto) throws Exception {
+    public void createCourse(String name, String daytime,String schedule) throws Exception {
         CourseEntity course = new CourseEntity();
-        course.setName(dto.getName());
-        course.setDaytime(dto.getDaytime());
-        course.setSchedule(dto.getSchedule());
-        courseRepository.save(course);
+        if (findByNameAndSoftDeleteFalse(name) == null){
+            course.setName(name);
+            course.setDaytime(daytime);
+            course.setSchedule(schedule);
+            courseRepository.save(course);
+        } else {
+            throw new Exception("There is a course with this name");
+        }
     }
 
     @Override

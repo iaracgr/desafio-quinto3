@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ICourseService {
 
-    void createCourse(CourseDto request) throws Exception;
+    void createCourse(String name, String daytime, String schedule) throws Exception;
 
     CourseDto updateCourse(String id,String name, String daytime, String schedule) throws Exception;
 
